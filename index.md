@@ -6,4 +6,5 @@ None currently
 
 ## Configuration
 
-[Mac OS X](https://dadovan.github.io/Pages/macOSConfigurationGuide.md)
+[Windows](https://dadovan.github.io/Pages/WindowsConfigurationGuide)
+[Mac OS X](https://dadovan.github.io/Pages/macOSConfigurationGuide)
