@@ -9,3 +9,7 @@ None currently
 [Windows](https://dadovan.github.io/Pages/WindowsConfigurationGuide)
 
 [Mac OS X](https://dadovan.github.io/Pages/macOSConfigurationGuide)
+
+## Software notes
+
+[Vim](https://dadovan.github.io/Pages/vim)

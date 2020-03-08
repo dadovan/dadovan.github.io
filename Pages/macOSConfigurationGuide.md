@@ -26,7 +26,6 @@ I store tons of data here.
 
 [Spotify](https://www.spotify.com/us/download)
 
-
 ### Development
 
 [Azure Data Studio](https://aka.ms/azuredatastudio)
@@ -47,3 +46,5 @@ Force Finder to always show all files
 `$ defaults write com.apple.finder AppleShowAllFiles YES (undo = FALSE)`
 
 [Make Home & End keys behave like Windows on Mac OS X](https://damieng.com/blog/2015/04/24/make-home-end-keys-behave-like-windows-on-mac-os-x)
+
+[comment]: # (TAGS: configuration, macos)
