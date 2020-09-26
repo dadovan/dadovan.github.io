@@ -29,4 +29,4 @@ Create a new immuatable map (notice the two ways to specify an entry):
 val weekend = Map("Mon" -> "No", ("Fri", "Yes"))
 ```
 
-[comment]: # (TAGS: scala)
+[comment]: # (TAGS: development, scala)

@@ -2,9 +2,11 @@
 
 [vim.org](https://www.vim.org)
 
-## Commands
+## Cheat Sheet
 
-### Editing
+### Commands
+
+#### Editing
 
 |||
 ---|---
@@ -15,14 +17,14 @@
 | p | Paste after current line |
 | dd | Delete current line |
 
-### Navigating
+#### Navigating
 
 |||
 ---|---
 | G | Goto last line |
 | *n*G | Goto line *n* |
 
-### Searching
+#### Searching
 
 |||
 ---|---

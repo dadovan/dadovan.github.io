@@ -6,14 +6,24 @@ None currently
 
 ## Configuration
 
-[Windows](https://dadovan.github.io/Pages/WindowsConfigurationGuide)
-
 [Mac OS X](https://dadovan.github.io/Pages/macOSConfigurationGuide)
+
+[Windows](https://dadovan.github.io/Pages/WindowsConfigurationGuide)
 
 ## Software notes
 
-[Vim](https://dadovan.github.io/Pages/vim)
+[Vim](https://dadovan.github.io/Pages/Vim)
+
+[Zsh](https://dadovan.github.io/Pages/zsh)
 
 ## Software development
 
-[Scala](https://dadovan.github.io/Pages/scala)
+### Java
+
+[Modern Java in Action](https://dadovan.github.io/Notes/Modern_Java_in_Action)
+
+### Other
+
+[Lua](https://dadovan.github.io/Pages/Lua)
+
+[Scala](https://dadovan.github.io/Pages/Scala)

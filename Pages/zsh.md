@@ -1,6 +1,8 @@
-# Z shell Cheat Sheet
+# Z shell
 
-## Scripting
+## Cheat Sheet
+
+### Scripting
 
 |||
 ---|---
