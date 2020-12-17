@@ -1,0 +1,61 @@
+local -r left_circle='\uE0B6'
+local -r right_circle='\uE0B4'
+local -r vertical_bar='\u2502'
+
+local -r checkmark='✔'
+local -r settings=''
+
+setopt PROMPT_SUBST     # Allow expansions/substitutions in prompt
+
+autoload -Uz vcs_info
+zstyle ':vcs_info:*' enable git
+zstyle ':vcs_info:git:*' formats '%F{240}%b %c%u%f'
+zstyle ':vcs_info:git:*' actionformats '${formats}%{${fg[default]}%} ${PRCH[sep]} %{${fg[green]}%}%a'
+zstyle ':vcs_info:git:*' get-revision true
+zstyle ':vcs_info:git:*' check-for-changes true
+zstyle ':vcs_info:git:*' stagedstr '%F{green}✚%f'
+zstyle ':vcs_info:git:*' unstagedstr '%F{yellow}●%f'
+
+prompt_dir() {
+    local _pwd=$PWD
+
+    # Simulate %~ in prompt if we're under $HOME
+    local _home_size=${#HOME}
+    if [[ $HOME == ${_pwd:0:$_home_size} ]]; then
+        local _pwd="~${_pwd:$_home_size:${#_pwd}}"
+    fi
+
+    # Highlight the first and last bits of PWD
+    local _parts=(${(s:/:)_pwd})
+    local _parts_size=${#_parts[@]}
+    if [[ _parts_size -ge 3 ]]; then
+        local _ps=$_parts[1]
+        local _pm=${(j./.)_parts[2,-2]}
+        local _pe=$_parts[-1]
+        _prompt_dir="%F{39}/${_ps}%f%F{31}/${_pm}/%f%F{39}${_pe}%f"
+    else
+        _prompt_dir="%F{39}%~%f"
+    fi
+}
+
+precmd() {
+    local _last_exit_code=$?
+    vcs_info
+
+    prompt_dir
+
+    _prompt_elevated="%F{red}%(!.🐙.)%f" # Shows 🐙 if we're elevated
+
+    if [[ -n $vcs_info_msg_0_ ]]; then
+        PROMPT='%K{236} ${_prompt_dir} │ ${vcs_info_msg_0_} ${_prompt_elevated}%k%F{236}%f '
+    else
+        PROMPT='%K{236} ${_prompt_dir} ${_prompt_elevated}%k%F{236}%f '
+    fi
+
+    _prompt_exit_code=''
+    if [[ _last_exit_code -ne 0 ]]; then
+         _prompt_exit_code=" %K{red}%F{208} $_last_exit_code %k%f%K{236} | "
+    fi
+
+    RPROMPT='%F{236}%f%K{236} ${_prompt_exit_code}%* %k'
+}
